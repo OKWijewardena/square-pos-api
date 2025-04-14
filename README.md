@@ -45,7 +45,7 @@ The server will start at:\
 
 ### 🔓 Public Routes
 
-| Method\_Endpoint\_Description |          |                                     |
+| Method                        | Endpoint | Description                         |
 | ----------------------------- | -------- | ----------------------------------- |
 | POST                          | `/login` | Mock restaurant login (returns JWT) |
 | GET                           | `/ping`  | Health check route                  |
@@ -54,7 +54,7 @@ The server will start at:\
 
 ### 🔐 Protected Routes (JWT Required)
 
-| Method\_Endpoint\_Description |                                   |                             |
+| Method                        | Endpoint                          | Description                 |
 | ----------------------------- | --------------------------------- | --------------------------- |
 | POST                          | `/api/orders`                     | Create a restaurant order   |
 | GET                           | `/api/orders/:order_id`           | Get order by ID             |
@@ -68,7 +68,7 @@ The server will start at:\
 
 ### 🔁 Square Integration
 
-| Method\_Endpoint\_Description |                 |                                   |
+| Method                        | Endpoint        | Description                       |
 | ----------------------------- | --------------- | --------------------------------- |
 | POST                          | `/square/order` | Sends order to Square sandbox API |
 
