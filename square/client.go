@@ -16,13 +16,13 @@ func init() {
 	SquareAccessToken := os.Getenv("SQUARE_ACCESS_TOKEN")
 	SquareLocationID := os.Getenv("SQUARE_LOCATION_ID")
 	
-	fmt.Println("🧪 Loaded Square Access Token:", SquareAccessToken)
-	fmt.Println("🧪 Loaded Square Location ID:", SquareLocationID)
+	fmt.Println("Loaded Square Access Token:", SquareAccessToken)
+	fmt.Println("Loaded Square Location ID:", SquareLocationID)
 }
 
 // Helper to call Square API
 func CallSquareAPI(method, url string, body interface{}) ([]byte, error) {
-	
+
 	SquareAccessToken := os.Getenv("SQUARE_ACCESS_TOKEN")
 
 	client := &http.Client{}
@@ -42,9 +42,9 @@ func CallSquareAPI(method, url string, body interface{}) ([]byte, error) {
 	fmt.Println("📡 Calling Square API:", url)
 
 	if len(SquareAccessToken) >= 6 {
-		fmt.Println("➡️  Authorization Header: Bearer", SquareAccessToken[:6]+"...")
+		fmt.Println("Authorization Header: Bearer", SquareAccessToken[:6]+"...")
 	} else {
-		fmt.Println("⚠️  SQUARE_ACCESS_TOKEN is empty or too short")
+		fmt.Println("SQUARE_ACCESS_TOKEN is empty or too short")
 	}
 	
 
@@ -61,7 +61,7 @@ func CallSquareAPI(method, url string, body interface{}) ([]byte, error) {
 	responseBody, _ := ioutil.ReadAll(resp.Body)
 
 	// Print status for debug
-	fmt.Println("🔁 Square API Response Status:", resp.Status)
+	fmt.Println("Square API Response Status:", resp.Status)
 
 	return responseBody, nil
 }

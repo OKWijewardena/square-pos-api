@@ -33,17 +33,17 @@ type CreateOrderRequest struct {
 
 func main() {
 	if err := godotenv.Load(); err != nil {
-		log.Fatal("❌ Error loading .env file")
+		log.Fatal("Error loading .env file")
 	}
-	log.Println("✅ .env file loaded")
-	log.Println("🧪 Loaded Square Access Token:", os.Getenv("SQUARE_ACCESS_TOKEN"))
-	log.Println("🧪 Loaded Square Location ID:", os.Getenv("SQUARE_LOCATION_ID"))
+	log.Println(".env file loaded")
+	log.Println("Loaded Square Access Token:", os.Getenv("SQUARE_ACCESS_TOKEN"))
+	log.Println("Loaded Square Location ID:", os.Getenv("SQUARE_LOCATION_ID"))
 
 	token := os.Getenv("SQUARE_ACCESS_TOKEN")
 	if token == "" {
-		log.Fatal("❌ SQUARE_ACCESS_TOKEN is empty")
+		log.Fatal("SQUARE_ACCESS_TOKEN is empty")
 	} else {
-		log.Println("🔑 Square Token Loaded (partial):", token[:10], "...")
+		log.Println("Square Token Loaded (partial):", token[:10], "...")
 	}
 
 	database.Connect()

@@ -10,7 +10,7 @@ import (
 
 )
 
-var jwtKey = []byte("d8e1660e8d2862652f838c4b922ca4a7348b0ee2899952fe2d1e8efbe20ccda4") // or load from os.Getenv
+var jwtKey = []byte("d8e1660e8d2862652f838c4b922ca4a7348b0ee2899952fe2d1e8efbe20ccda4")
 
 type JWTClaim struct {
 	RestaurantID uint `json:"restaurant_id"`

@@ -20,7 +20,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	// Optional: validate if restaurant exists
+	// validate if restaurant exists
 	var restaurant models.Restaurant
 	if err := database.DB.First(&restaurant, req.RestaurantID).Error; err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Restaurant not found"})

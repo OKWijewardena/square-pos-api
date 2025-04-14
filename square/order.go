@@ -18,7 +18,7 @@ func CreateSquareOrder(tableNumber string, items []OrderItem) ([]byte, error) {
 	// Get location ID from env at runtime
 	squareLocationID := os.Getenv("SQUARE_LOCATION_ID")
 
-	// 🔑 Make the idempotency key unique for every request
+	// Make the idempotency key unique for every request
 	idempotencyKey := uuid.New().String()
 
 	// Build the Square order body

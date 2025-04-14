@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-// ✅ This test simulates the Square server using httptest.Server
+// This test simulates the Square server using httptest.Server
 func TestCreateSquareOrder(t *testing.T) {
 	// Step 1: Start a fake HTTP server to simulate Square API
 	mockServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -35,18 +35,12 @@ func TestCreateSquareOrder(t *testing.T) {
 	}))
 	defer mockServer.Close()
 
-	// Step 2: Temporarily change the Square environment base URL
-	// originalURL := "https://connect.squareupsandbox.com/v2/orders"
-
 	// Replace in test by modifying the env or faking the host
 	os.Setenv("SQUARE_ACCESS_TOKEN", "EAAAl7pUMdR4fYWjgaXg1xvdy-jhH1AEq0uN-WF6zDyRPF7FeCum6OKkaIwMSwcj")
 	os.Setenv("SQUARE_LOCATION_ID", "LNE1FE7JFW9PJ")
 
-	// Step 3: Call your real CreateSquareOrder using the fake server
-	// Trick: change the URL inside your function — temporarily redirect DNS by faking host in test
-	// For this, copy-paste CreateSquareOrder locally and inject URL — or test CallSquareAPI directly
 
-	// ✅ Direct test of CallSquareAPI using mockServer
+	// Direct test of CallSquareAPI using mockServer
 	body := map[string]interface{}{
 		"order": map[string]interface{}{
 			"location_id":  "LNE1FE7JFW9PJ",
